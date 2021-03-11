@@ -1,6 +1,9 @@
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 #include "DataBaseHander.h"
 #include "Student.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
