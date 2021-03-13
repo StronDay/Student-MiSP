@@ -1,5 +1,3 @@
-// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
 #include "DataBaseHander.h"
 #include "Student.h"
 #include <iostream>

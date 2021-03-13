@@ -7,16 +7,7 @@ using namespace std;
 
 class Student
 {
-
 private:
-
-	/*const string& GetInstitute();
-	const string& GetDistrict();
-	const string& GetCinema();
-	const string& GetAdress();
-	const string& GetCaffe();
-	const string& GetCity();
-	const string& GetAge();*/
 
 	string _name;
 	string _city;
@@ -49,5 +40,4 @@ public:
 	);
 
 	unsigned int CounterMonthCost(unsigned int numberWorkDay, unsigned int numberNonWorkDay);
-
 };
