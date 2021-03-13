@@ -10,6 +10,14 @@ class Student
 
 private:
 
+	/*const string& GetInstitute();
+	const string& GetDistrict();
+	const string& GetCinema();
+	const string& GetAdress();
+	const string& GetCaffe();
+	const string& GetCity();
+	const string& GetAge();*/
+
 	string _name;
 	string _city;
 	string _institute;
@@ -35,10 +43,11 @@ public:
 		const string& caffe,
 		const string& cinema,
 		
-		unsigned int& numberWorkDay,
-		unsigned int& numberNonWorkDay
+		unsigned int numberWorkDay,
+		unsigned int numberNonWorkDay
+
 	);
 
-	unsigned int CounterMonthCost(const unsigned int& numberWorkDay, const unsigned int& numberNonWorkDay);
+	unsigned int CounterMonthCost(unsigned int numberWorkDay, unsigned int numberNonWorkDay);
 
 };

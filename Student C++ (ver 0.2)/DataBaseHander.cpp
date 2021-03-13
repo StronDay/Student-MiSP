@@ -76,8 +76,6 @@ unsigned int DataBaseHander::CostReaderTransport(const string& city, const strin
 		}
 	}
 
-	fileReader.close();
-
 	return 0;
 }
 
@@ -115,24 +113,14 @@ unsigned int DataBaseHander::CostReaderCosts(const string& city, const string& a
 		}
 	}
 
-	fileReader.close();
-
 	return 0;
 }
 
-struct Recreation {
-
-	string city;
-	string adress;
-	string name;
-	string cost;
-};
-
 unsigned int DataBaseHander::CostReaderCaffeAndCinema
 (
-	const string& city, 
-	const string& adress, 
-	const string& caffe, 
+	const string& city,
+	const string& adress,
+	const string& caffe,
 	const string& cinema
 )	const
 {
@@ -168,8 +156,6 @@ unsigned int DataBaseHander::CostReaderCaffeAndCinema
 			}
 		}
 	}
-
-	fileReader.close();
 
 	return 0;
 }

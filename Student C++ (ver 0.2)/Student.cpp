@@ -2,6 +2,7 @@
 
 Student::Student
 (
+	
 	const string& age,
 	const string& name,
 	const string& city,
@@ -10,36 +11,36 @@ Student::Student
 	const string& adress,
 	const string& caffe,
 	const string& cinema,
-	unsigned int& numberWorkDay,
-	unsigned int& numberNonWorkDay
+	unsigned int numberWorkDay,
+	unsigned int numberNonWorkDay
 )
 {
 
-	_age = age;
-	_city = city;
+	_numberNonWorkDay = numberNonWorkDay;
+	_numberWorkDay = numberWorkDay;
 	_institute = institute;
 	_district = district;
 	_adress = adress;
-	_caffe = caffe;
 	_cinema = cinema;
-	_numberWorkDay = numberWorkDay;
-	_numberNonWorkDay = numberNonWorkDay;
+	_caffe = caffe;
+	_city = city;
+	_age = age;
 }
 
-unsigned int Student::CounterMonthCost(const unsigned int& numberWorkDay, const unsigned int& numberNonWorkDay)
+unsigned int Student::CounterMonthCost(unsigned int numberWorkDay, unsigned int numberNonWorkDay)
 {
+	unsigned int costCaffeAndCinema;
 	unsigned int costTransport;
 	unsigned int costInstitute;
 	unsigned int costCosts;
-	unsigned int costCaffeAndCinema;
 	unsigned int cost = 0;
-
-	DataBaseHander data;
 	
+	DataBaseHander data;
+
+	costCaffeAndCinema = data.CostReaderCaffeAndCinema(_city, _adress, _caffe, _cinema);
 	costTransport = data.CostReaderTransport(_city, _district, _institute);
 	costInstitute = data.CostReaderInstitute(_city, _institute);
 	costCosts = data.CostReaderCosts(_city, _age);
-	costCaffeAndCinema = data.CostReaderCaffeAndCinema(_city, _adress, _caffe, _cinema);
 
 	if (costTransport != NULL && costInstitute != NULL && costCosts != NULL && costCaffeAndCinema != NULL) {
 
@@ -48,32 +49,44 @@ unsigned int Student::CounterMonthCost(const unsigned int& numberWorkDay, const 
 	}
 	else {
 
-		cout << "Entered data incorect: " << endl;
+		/*cout << "Entered data incorect: " << endl;
 
 		if (costTransport == NULL) {
 
 			cout << "check positions: city, district, institute" << endl;
-			exit(0);
 		}
 
 		if (costInstitute == NULL) {
 
 			cout << "check positions: city, institute" << endl;
-			exit(0);
 		}
 
 		if (costCosts == NULL) {
 
 			cout << "check positions: city, age" << endl;
-			exit(0);
 		}
 
 		if (costCaffeAndCinema == NULL) {
 
 			cout << "check positions: city, adress, caffe, cinema" << endl;
-			exit(0);
-		}
+		}*/
+
+		return cost;
 	}
 
 	return cost;
 }
+
+//const string& Student::GetInstitute() { return _institute; }
+//
+//const string& Student::GetDistrict() { return _district; }
+//
+//const string& Student::GetAdress() { return _adress; }
+//
+//const string& Student::GetCinema() { return _cinema; }
+//
+//const string& Student::GetCaffe() { return _caffe; }
+//
+//const string& Student::GetCity() { return _city; }
+//
+//const string& Student::GetAge() { return _age; }
