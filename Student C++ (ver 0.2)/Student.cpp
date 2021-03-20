@@ -27,7 +27,16 @@ Student::Student
 	_age = age;
 }
 
-unsigned int Student::CounterMonthCost(unsigned int numberWorkDay, unsigned int numberNonWorkDay)
+unsigned int Student::CounterMonthCost
+(
+	unsigned int numberWorkDay, 
+	unsigned int numberNonWorkDay,
+
+	const string& puthInstitute, 
+	const string& puthCosts, 
+	const string& puthTransport,
+	const string& puthCaffeAndCinema
+)
 {
 	unsigned int costCaffeAndCinema;
 	unsigned int costTransport;
@@ -37,19 +46,15 @@ unsigned int Student::CounterMonthCost(unsigned int numberWorkDay, unsigned int 
 	
 	DataBaseHander data;
 
-	costCaffeAndCinema = data.CostReaderCaffeAndCinema(_city, _adress, _caffe, _cinema, "Caffe-And-Cinema.csv");
-	costTransport = data.CostReaderTransport(_city, _district, _institute, "Transport.csv");
-	costInstitute = data.CostReaderInstitute(_city, _institute, "Institute.csv");
-	costCosts = data.CostReaderCosts(_city, _age, "Costs.csv");
+	costCaffeAndCinema = data.CostReaderCaffeAndCinema(_city, _adress, _caffe, _cinema, puthCaffeAndCinema);
+	costTransport = data.CostReaderTransport(_city, _district, _institute, puthTransport);
+	costInstitute = data.CostReaderInstitute(_city, _institute, puthInstitute);
+	costCosts = data.CostReaderCosts(_city, _age, puthCosts);
 
-	if (costTransport != NULL && costInstitute != NULL && costCosts != NULL && costCaffeAndCinema != NULL) {
+	if (costTransport != 0 && costInstitute != 0 && costCosts != 0 && costCaffeAndCinema != 0) {
 
 		cost = ((costTransport * 2 + costInstitute) * numberWorkDay + (costCaffeAndCinema) * numberNonWorkDay) + costCosts;
 	}
-	else {
-
-		return cost;
-	}
-
+	
 	return cost;
 }

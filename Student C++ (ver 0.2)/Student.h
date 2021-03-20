@@ -39,5 +39,14 @@ public:
 
 	);
 
-	unsigned int CounterMonthCost(unsigned int numberWorkDay, unsigned int numberNonWorkDay);
+	unsigned int CounterMonthCost
+	(
+		unsigned int numberWorkDay, 
+		unsigned int numberNonWorkDay, 
+
+		const string& puthInstitute,
+		const string& puthCosts,
+		const string& puthTransport,
+		const string& puthCaffeAndCinema
+	);
 };

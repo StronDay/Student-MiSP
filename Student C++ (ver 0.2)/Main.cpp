@@ -51,10 +51,15 @@ int main() {
 	cout << "Enter number non-work days in the month: ";
 	cin >> numberNonWorkDay;
 	cout << "--------------" << endl;
-	
+
+	string puthInstitute = "Institute.csv";
+	string puthCosts = "Costs.csv";
+	string puthTransport = "Transport.csv";
+	string puthCaffeAndCinema = "Caffe-and-cinema.csv";
+
 	Student firstStudent(age, name, city, institute, district, adress, caffe, cinema, numberWorkDay, numberNonWorkDay);
 
-	cost = firstStudent.CounterMonthCost(numberWorkDay, numberNonWorkDay);
+	cost = firstStudent.CounterMonthCost(numberWorkDay, numberNonWorkDay, puthInstitute, puthCosts, puthTransport, puthCaffeAndCinema);
 
 	cout << "Student monthly cost of living: " << cost << endl;
 

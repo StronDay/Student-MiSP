@@ -1,7 +1,7 @@
 #include "DataBaseHander.h"
 #include <sstream>
 
-unsigned int DataBaseHander::CostReaderInstitute(const string& city, const string& institute, const string& path) const
+unsigned int DataBaseHander::CostReaderInstitute(const string& city, const string& institute, const string& path)
 {
 	fstream fileReader;
 	fileReader.open(path);
@@ -35,17 +35,15 @@ unsigned int DataBaseHander::CostReaderInstitute(const string& city, const strin
 	return 0;
 }
 
-unsigned int DataBaseHander::CostReaderTransport(const string& city, const string& district, const string& institute, const string& path) const
+unsigned int DataBaseHander::CostReaderTransport(const string& city, const string& district, const string& institute, const string& path)
 {
 	fstream fileReader;
-	fileReader.open("path");
+	fileReader.open(path);
 	if (!fileReader.is_open()) {
 
 		cout << "FILE OPENING ERROR (Transport.csv)" << ")" << endl;
 		return 0;
 	}
-
-	unsigned int cost = 0;
 
 	string line;
 	string fCity;
@@ -71,10 +69,10 @@ unsigned int DataBaseHander::CostReaderTransport(const string& city, const strin
 	return 0;
 }
 
-unsigned int DataBaseHander::CostReaderCosts(const string& city, const string& age, const string& path) const
+unsigned int DataBaseHander::CostReaderCosts(const string& city, const string& age, const string& path)
 {
 	fstream fileReader;
-	fileReader.open("path");
+	fileReader.open(path);
 	if (!fileReader.is_open()) {
 
 		cout << "FILE OPENING ERROR (Costs.csv)" << ")" << endl;
@@ -112,10 +110,10 @@ unsigned int DataBaseHander::CostReaderCaffeAndCinema
 	const string& caffe,
 	const string& cinema,
 	const string& path
-)	const
+)
 {
 	fstream fileReader;
-	fileReader.open("path");
+	fileReader.open(path);
 	if (!fileReader.is_open()) {
 
 		cout << "FILE OPENING ERROR (Caffe-and-cinema.csv)" << ")" << endl;
